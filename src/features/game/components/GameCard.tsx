@@ -19,11 +19,13 @@ type GameCardProps = {
 };
 
 const GameCard = ({ name, emoji, score, highScore }: GameCardProps) => {
-  const [selectedButton, setSelectedButton] = useState(0);
+  const [selectedButton, setSelectedButton] = useState(-1);
 
-  const handleButtonClick = (id: number) => {
+  const handleCategoryButtonClick = (id: number) => {
     setSelectedButton(id);
   };
+
+  const handleCheckButtonClick = () => {};
 
   return (
     <Card className="max-w-[420px]">
@@ -50,47 +52,49 @@ const GameCard = ({ name, emoji, score, highScore }: GameCardProps) => {
             label="Human development index"
             id={0}
             isSelected={selectedButton === 0}
-            onClick={handleButtonClick}
+            onClick={handleCategoryButtonClick}
           />
           <CategoryButton
             emoji="📈"
             label="GDP per capita"
             id={1}
             isSelected={selectedButton === 1}
-            onClick={handleButtonClick}
+            onClick={handleCategoryButtonClick}
           />
           <CategoryButton
             emoji="🏠"
             label="Population"
             id={2}
             isSelected={selectedButton === 2}
-            onClick={handleButtonClick}
+            onClick={handleCategoryButtonClick}
           />
           <CategoryButton
             emoji="🏭"
             label="Pollution"
             id={3}
             isSelected={selectedButton === 3}
-            onClick={handleButtonClick}
+            onClick={handleCategoryButtonClick}
           />
           <CategoryButton
             emoji="🚨"
             label="Crime rate"
             id={4}
             isSelected={selectedButton === 4}
-            onClick={handleButtonClick}
+            onClick={handleCategoryButtonClick}
           />
           <CategoryButton
             emoji="🗺️"
             label="Area"
             id={5}
             isSelected={selectedButton === 5}
-            onClick={handleButtonClick}
+            onClick={handleCategoryButtonClick}
           />
         </div>
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Button className="text-md">Restart</Button>
+        <Button className="text-md" onClick={handleCheckButtonClick}>
+          Check!
+        </Button>
       </CardFooter>
     </Card>
   );
