@@ -21,7 +21,10 @@ const GeoHunter = () => {
         />
       </div>
       <div className="fixed right-4 bottom-4">
-        <Link href="https://github.com/joshuatighe/geofigure">
+        <Link
+          href="https://github.com/joshuatighe/geofigure"
+          className="hidden md:block"
+        >
           <LucideGithub />
         </Link>
       </div>
