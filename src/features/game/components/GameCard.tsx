@@ -92,7 +92,7 @@ const GameCard = ({ name, emoji, score, highScore }: GameCardProps) => {
         </div>
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Button className="text-md" onClick={handleCheckButtonClick}>
+        <Button className="text-md text-white" onClick={handleCheckButtonClick}>
           Check!
         </Button>
       </CardFooter>
