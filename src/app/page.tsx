@@ -1,3 +1,5 @@
+import { LucideGithub } from "lucide-react";
+import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { countries } from "@/data/countries";
 import { GameCard } from "@/features/game/components/GameCard";
@@ -7,7 +9,7 @@ const GeoHunter = () => {
 
   return (
     <>
-      <div className="fixed right-0 top-0 px-8 py-8">
+      <div className="fixed right-4 top-4">
         <ThemeSwitcher />
       </div>
       <div className="flex-1 flex flex-col items-center">
@@ -17,6 +19,11 @@ const GeoHunter = () => {
           score={0}
           highScore={0}
         />
+      </div>
+      <div className="fixed right-4 bottom-4">
+        <Link href="https://github.com/joshuatighe/geofigure">
+          <LucideGithub />
+        </Link>
       </div>
     </>
   );
