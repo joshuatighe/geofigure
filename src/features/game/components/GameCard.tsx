@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "../../../components/ui/button";
 import {
   Card,
@@ -16,6 +19,12 @@ type GameCardProps = {
 };
 
 const GameCard = ({ name, emoji, score, highScore }: GameCardProps) => {
+  const [selectedButton, setSelectedButton] = useState(0);
+
+  const handleButtonClick = (id: number) => {
+    setSelectedButton(id);
+  };
+
   return (
     <Card className="max-w-[420px]">
       <CardHeader>
@@ -36,12 +45,48 @@ const GameCard = ({ name, emoji, score, highScore }: GameCardProps) => {
         </p>
 
         <div className="flex flex-col gap-y-2.5">
-          <CategoryButton emoji="🏙️" label="Human development index" />
-          <CategoryButton emoji="📈" label="GDP per capita" />
-          <CategoryButton emoji="🏠" label="Population" />
-          <CategoryButton emoji="🏭" label="Pollution" />
-          <CategoryButton emoji="🚨" label="Crime rate" />
-          <CategoryButton emoji="🗺️" label="Area" />
+          <CategoryButton
+            emoji="🏙️"
+            label="Human development index"
+            id={0}
+            isSelected={selectedButton === 0}
+            onClick={handleButtonClick}
+          />
+          <CategoryButton
+            emoji="📈"
+            label="GDP per capita"
+            id={1}
+            isSelected={selectedButton === 1}
+            onClick={handleButtonClick}
+          />
+          <CategoryButton
+            emoji="🏠"
+            label="Population"
+            id={2}
+            isSelected={selectedButton === 2}
+            onClick={handleButtonClick}
+          />
+          <CategoryButton
+            emoji="🏭"
+            label="Pollution"
+            id={3}
+            isSelected={selectedButton === 3}
+            onClick={handleButtonClick}
+          />
+          <CategoryButton
+            emoji="🚨"
+            label="Crime rate"
+            id={4}
+            isSelected={selectedButton === 4}
+            onClick={handleButtonClick}
+          />
+          <CategoryButton
+            emoji="🗺️"
+            label="Area"
+            id={5}
+            isSelected={selectedButton === 5}
+            onClick={handleButtonClick}
+          />
         </div>
       </CardContent>
       <CardFooter className="flex justify-center">
